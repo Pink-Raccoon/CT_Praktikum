@@ -6,6 +6,7 @@
 #define ROTSW_ADDR 0x60000211
 #define DISP0_ADDR 0x60000110
 #define LED_VALUE 0x12
+//binary from ennis.zhaw.ch(7-segments) converted to hex 
 #define null 0xC0 
 #define eins 0xF9
 #define zwei 0xA4
@@ -36,7 +37,7 @@ int main(void)
 		
 		uint32_t rotaSwitch = read_word(ROTSW_ADDR);
 		write_word(DISP0_ADDR,rotaSwitch);
-		write_byte(DISP0_ADDR, hexarray[read_byte(ROTSW_ADDR) & 0x0F]);
+		write_byte(DISP0_ADDR, hexarray[read_byte(ROTSW_ADDR) & 0x0F]); //0X0F is to mask upper 4 bits
 		
 	
 	}
