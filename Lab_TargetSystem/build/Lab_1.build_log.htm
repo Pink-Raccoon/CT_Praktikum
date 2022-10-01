@@ -30,13 +30,10 @@ Rebuild target 'Target 1'
 app/main.c(9): warning: // comments are not allowed in this language [-Wcomment]
 //binary from ennis.zhaw.ch(7-segments) converted to hex 
 ^
-app/main.c(38): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
-                uint32_t rotaSwitch = read_word(ROTSW_ADDR);
-                         ^
-app/main.c(47): warning: no newline at end of file [-Wnewline-eof]
+app/main.c(46): warning: no newline at end of file [-Wnewline-eof]
 }
  ^
-3 warnings generated.
+2 warnings generated.
 compiling main.c...
 compiling utils_ctboard.c...
 RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(18): warning: In file included from...
@@ -124,6 +121,8 @@ RTE/HAL/CT_Board_HS14_M0/hal_adc.c(145): warning: implicit conversion changes si
              ~~ ^~~~~~~~~~~~~
 9 warnings generated.
 compiling hal_adc.c...
+assembling datainit_ctboard.s...
+assembling startup_ctboard.s...
 RTE/Device/CT_Board_HS14_M0/system_ctboard.c(42): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\system_ctboard.h(32): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(24): warning: In file included from...
@@ -189,8 +188,23 @@ typedef struct {
         ^
 12 warnings generated.
 compiling system_ctboard.c...
-assembling startup_ctboard.s...
-assembling datainit_ctboard.s...
+RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(18): warning: In file included from...
+C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_pwr.h(24): warning: In file included from...
+C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
+    PER_ADC1,       // APB2
+                    ^
+RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(19): warning: In file included from...
+C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
+//    volatile uint32_t HR[5];
+^
+RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(117): warning: unused parameter 'status' [-Wunused-parameter]
+hal_bool_t hal_pwr_set_overdrive(hal_bool_t status)
+                                            ^
+RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(128): warning: unused parameter 'status' [-Wunused-parameter]
+hal_bool_t hal_pwr_set_underdrive(hal_bool_t status)
+                                             ^
+4 warnings generated.
+compiling hal_pwr.c...
 RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(18): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(24): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
@@ -231,23 +245,6 @@ RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(366): warning: implicit conversion changes s
                      ~~ ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 11 warnings generated.
 compiling hal_gpio.c...
-RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(18): warning: In file included from...
-C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_pwr.h(24): warning: In file included from...
-C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
-    PER_ADC1,       // APB2
-                    ^
-RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(19): warning: In file included from...
-C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
-//    volatile uint32_t HR[5];
-^
-RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(117): warning: unused parameter 'status' [-Wunused-parameter]
-hal_bool_t hal_pwr_set_overdrive(hal_bool_t status)
-                                            ^
-RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(128): warning: unused parameter 'status' [-Wunused-parameter]
-hal_bool_t hal_pwr_set_underdrive(hal_bool_t status)
-                                             ^
-4 warnings generated.
-compiling hal_pwr.c...
 RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(18): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_rcc.h(24): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
@@ -318,8 +315,8 @@ RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(327): warning: enumeration values 'HAL_RCC_OS
 21 warnings generated.
 compiling hal_rcc.c...
 linking...
-Program Size: Code=3664 RO-data=428 RW-data=0 ZI-data=8192  
-".\build\Lab_1.axf" - 0 Error(s), 75 Warning(s).
+Program Size: Code=3644 RO-data=428 RW-data=0 ZI-data=8192  
+".\build\Lab_1.axf" - 0 Error(s), 74 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -343,43 +340,43 @@ Package Vendor: InES
 <h2>Collection of Component Files used:</h2>
 
    * Component: InES::Device:Startup:4.0.1
-      Include file:  Device/Include/m0/platform_ctboard.h
-      Include file:  Device/Include/reg_stm32f4xx.h
-      Include file:  Device/Include/reg_ctboard.h
-      Source file:   Device/Source/startup_ctboard.s
       Include file:  Device/Include/system_ctboard.h
+      Source file:   Device/Source/startup_ctboard.s
+      Include file:  Device/Include/reg_ctboard.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  Device/Include/m0/platform_ctboard.h
       Source file:   Device/Source/datainit_ctboard.s
       Source file:   Device/Source/system_ctboard.c
 
    * Component: InES::HAL:ADC:4.0.1
-      Source file:   HAL/Source/hal_adc.c
       Include file:  Device/Include/reg_stm32f4xx.h
+      Source file:   HAL/Source/hal_adc.c
       Include file:  HAL/Include/hal_adc.h
       Include file:  HAL/Include/hal_common.h
 
    * Component: InES::HAL:FMC:3.0.1
       Include file:  Device/Include/reg_stm32f4xx.h
-      Include file:  HAL/Include/hal_fmc.h
       Source file:   HAL/Source/hal_fmc.c
       Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_fmc.h
 
    * Component: InES::HAL:GPIO:4.0.1
-      Include file:  HAL/Include/hal_gpio.h
-      Include file:  HAL/Include/hal_common.h
-      Source file:   HAL/Source/hal_gpio.c
       Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_gpio.h
+      Source file:   HAL/Source/hal_gpio.c
 
    * Component: InES::HAL:PWR:2.2.0
       Include file:  HAL/Include/hal_pwr.h
-      Include file:  Device/Include/reg_stm32f4xx.h
-      Source file:   HAL/Source/hal_pwr.c
       Include file:  HAL/Include/hal_common.h
+      Source file:   HAL/Source/hal_pwr.c
+      Include file:  Device/Include/reg_stm32f4xx.h
 
    * Component: InES::HAL:RCC:4.0.1
-      Include file:  Device/Include/reg_stm32f4xx.h
       Include file:  HAL/Include/hal_rcc.h
       Source file:   HAL/Source/hal_rcc.c
       Include file:  HAL/Include/hal_common.h
+      Include file:  Device/Include/reg_stm32f4xx.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

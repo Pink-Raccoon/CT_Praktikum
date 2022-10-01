@@ -35,8 +35,7 @@ int main(void)
 		uint32_t dipSwitch = read_word(DIPSW_ADDR);
 	  write_word(LED_ADDR,dipSwitch);
 		
-		uint32_t rotaSwitch = read_word(ROTSW_ADDR);
-		write_word(DISP0_ADDR,rotaSwitch);
+
 		write_byte(DISP0_ADDR, hexarray[read_byte(ROTSW_ADDR) & 0x0F]); //0X0F is to mask upper 4 bits
 		
 	
