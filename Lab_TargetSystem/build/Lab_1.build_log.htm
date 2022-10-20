@@ -36,6 +36,7 @@ app/main.c(46): warning: no newline at end of file [-Wnewline-eof]
 2 warnings generated.
 compiling main.c...
 compiling utils_ctboard.c...
+assembling startup_ctboard.s...
 RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(18): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_fmc.h(24): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
@@ -87,42 +88,6 @@ RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(117): warning: default label in switch which 
         ^
 15 warnings generated.
 compiling hal_fmc.c...
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
-C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(24): warning: In file included from...
-C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
-//    volatile uint32_t HR[5];
-^
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
-C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(25): warning: In file included from...
-C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
-    PER_ADC1,       // APB2
-                    ^
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
-C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(54): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
-    HAL_ADC_VBAT = 18u,             /**< Battery voltage (only ADC1) */
-                      ^~
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(43): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
-    reg = (init.scan_mode << 8u) |
-        ~ ~~~~~~~~~~~~~~~~~~~~~~~^
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(50): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
-          (init.polarity << 28u) |
-          ~~~~~~~~~~~~~~~~~~~~~~~^
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(58): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
-        reg = ((init.nr_conversions - 1) << 20u);
-            ~  ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(60): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-    adc->SQR1 &= ~(0xf << 20u);
-              ~~ ^~~~~~~~~~~~~
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(120): warning: // comments are not allowed in this language [-Wcomment]
-    } else {//if (channel >= HAL_ADC_CH0) {
-            ^
-RTE/HAL/CT_Board_HS14_M0/hal_adc.c(145): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-    adc->CR2 &= ~(0x1 << 30u);
-             ~~ ^~~~~~~~~~~~~
-9 warnings generated.
-compiling hal_adc.c...
-assembling datainit_ctboard.s...
-assembling startup_ctboard.s...
 RTE/Device/CT_Board_HS14_M0/system_ctboard.c(42): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\system_ctboard.h(32): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(24): warning: In file included from...
@@ -188,6 +153,41 @@ typedef struct {
         ^
 12 warnings generated.
 compiling system_ctboard.c...
+assembling datainit_ctboard.s...
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
+C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(24): warning: In file included from...
+C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
+//    volatile uint32_t HR[5];
+^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
+C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(25): warning: In file included from...
+C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
+    PER_ADC1,       // APB2
+                    ^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
+C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(54): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+    HAL_ADC_VBAT = 18u,             /**< Battery voltage (only ADC1) */
+                      ^~
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(43): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+    reg = (init.scan_mode << 8u) |
+        ~ ~~~~~~~~~~~~~~~~~~~~~~~^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(50): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+          (init.polarity << 28u) |
+          ~~~~~~~~~~~~~~~~~~~~~~~^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(58): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+        reg = ((init.nr_conversions - 1) << 20u);
+            ~  ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(60): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    adc->SQR1 &= ~(0xf << 20u);
+              ~~ ^~~~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(120): warning: // comments are not allowed in this language [-Wcomment]
+    } else {//if (channel >= HAL_ADC_CH0) {
+            ^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(145): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    adc->CR2 &= ~(0x1 << 30u);
+             ~~ ^~~~~~~~~~~~~
+9 warnings generated.
+compiling hal_adc.c...
 RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(18): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_pwr.h(24): warning: In file included from...
 C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
