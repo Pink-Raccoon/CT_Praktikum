@@ -64,18 +64,32 @@ typedef unsigned long long uintmax_t;
 
 
 
+<<<<<<< HEAD
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 1
 # 27 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h"
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include/m0\\platform_ctboard.h" 1
 # 28 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
+=======
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 1
+# 27 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h"
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include/m0\\platform_ctboard.h" 1
+# 28 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 
 
 
 
+<<<<<<< HEAD
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h" 1
 # 24 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h"
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h" 1
 # 44 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h" 1
+# 24 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h"
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h" 1
+# 44 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t PLLCFGR;
@@ -110,7 +124,11 @@ typedef struct {
     volatile uint32_t PLLSAICFGR;
     volatile uint32_t DCKCFGR;
 } reg_rcc_t;
+<<<<<<< HEAD
 # 97 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 97 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t ACR;
     volatile uint32_t KEYR;
@@ -120,18 +138,30 @@ typedef struct {
     volatile uint32_t OPTCR;
     volatile uint32_t OPTCR1;
 } reg_flash_t;
+<<<<<<< HEAD
 # 124 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 124 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t DR;
     volatile uint32_t IDR;
     volatile uint32_t CR;
 } reg_crc_t;
+<<<<<<< HEAD
 # 160 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 160 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t CSR;
 } reg_pwr_t;
+<<<<<<< HEAD
 # 194 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 194 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t MODER;
     volatile uint32_t OTYPER;
@@ -144,7 +174,11 @@ typedef struct {
     volatile uint32_t AFRL;
     volatile uint32_t AFRH;
 } reg_gpio_t;
+<<<<<<< HEAD
 # 338 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 338 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t MEMRMP;
     volatile uint32_t PMC;
@@ -155,7 +189,11 @@ typedef struct {
     uint32_t RESERVED[2];
     volatile uint32_t CMPCR;
 } reg_syscfg_t;
+<<<<<<< HEAD
 # 377 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 377 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t NDTR;
@@ -164,7 +202,11 @@ typedef struct {
     volatile uint32_t M1AR;
     volatile uint32_t FCR;
 } reg_dma_stream_t;
+<<<<<<< HEAD
 # 393 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 393 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t LISR;
     volatile uint32_t HISR;
@@ -172,7 +214,11 @@ typedef struct {
     volatile uint32_t HIFCR;
     reg_dma_stream_t STREAM[8];
 } reg_dma_t;
+<<<<<<< HEAD
 # 439 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 439 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t ISR;
@@ -195,7 +241,11 @@ typedef struct {
     volatile uint32_t LWR;
     volatile uint32_t AMTCR;
 } reg_dma2d_t;
+<<<<<<< HEAD
 # 492 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 492 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t ISER0;
     volatile uint32_t ISER1;
@@ -222,7 +272,11 @@ typedef struct {
     uint32_t RESERVED7[684];
     volatile uint32_t STIR;
 } reg_nvic_t;
+<<<<<<< HEAD
 # 538 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 538 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t IMR;
     volatile uint32_t EMR;
@@ -231,7 +285,11 @@ typedef struct {
     volatile uint32_t SWIER;
     volatile uint32_t PR;
 } reg_exti_t;
+<<<<<<< HEAD
 # 567 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 567 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t SR;
     volatile uint32_t CR1;
@@ -254,13 +312,21 @@ typedef struct {
     volatile uint32_t JDR4;
     volatile uint32_t DR;
 } reg_adc_t;
+<<<<<<< HEAD
 # 636 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 636 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CSR;
     volatile uint32_t CCR;
     volatile uint32_t CDR;
 } reg_adccom_t;
+<<<<<<< HEAD
 # 662 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 662 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t SWTRIGR;
@@ -277,7 +343,11 @@ typedef struct {
     volatile uint32_t DOR2;
     volatile uint32_t SR;
 } reg_dac_t;
+<<<<<<< HEAD
 # 709 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 709 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t SR;
@@ -291,7 +361,11 @@ typedef struct {
     volatile uint32_t CWSIZE;
     volatile uint32_t DR;
 } reg_dcmi_t;
+<<<<<<< HEAD
 # 751 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 751 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t WHPCR;
@@ -306,7 +380,11 @@ typedef struct {
     volatile uint32_t CFBLNR;
     volatile uint32_t CLUTWR;
 } reg_ltdc_lc_t;
+<<<<<<< HEAD
 # 773 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 773 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     uint32_t RESERVED1[2];
     volatile uint32_t SSCR;
@@ -327,7 +405,11 @@ typedef struct {
     uint32_t RESERVED3[15];
     reg_ltdc_lc_t LAYER2;
 } reg_ltdc_t;
+<<<<<<< HEAD
 # 824 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 824 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR1;
     volatile uint32_t CR2;
@@ -351,20 +433,32 @@ typedef struct {
     volatile uint32_t DMAR;
     volatile uint32_t OR;
 } reg_tim_t;
+<<<<<<< HEAD
 # 1009 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1009 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t KR;
     volatile uint32_t PR;
     volatile uint32_t RLR;
     volatile uint32_t SR;
 } reg_iwdg_t;
+<<<<<<< HEAD
 # 1036 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1036 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t CFR;
     volatile uint32_t SR;
 } reg_wwdg_t;
+<<<<<<< HEAD
 # 1072 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1072 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t SR;
@@ -403,13 +497,21 @@ typedef struct {
     volatile uint32_t CSGCM6R;
     volatile uint32_t CSGCM7R;
 } reg_cryp_t;
+<<<<<<< HEAD
 # 1141 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1141 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t SR;
     volatile uint32_t DR;
 } reg_rng_t;
+<<<<<<< HEAD
 # 1177 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1177 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR;
     volatile uint32_t DIN;
@@ -430,7 +532,11 @@ typedef struct {
     volatile uint32_t HR6;
     volatile uint32_t HR7;
 } reg_hash_t;
+<<<<<<< HEAD
 # 1228 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1228 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t TR;
     volatile uint32_t DR;
@@ -473,7 +579,11 @@ typedef struct {
     volatile uint32_t BKP18R;
     volatile uint32_t BKP19R;
 } reg_rtc_t;
+<<<<<<< HEAD
 # 1291 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1291 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR1;
     volatile uint32_t CR2;
@@ -486,7 +596,11 @@ typedef struct {
     volatile uint32_t TRISE;
     volatile uint32_t FLTR;
 } reg_i2c_t;
+<<<<<<< HEAD
 # 1354 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1354 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR1;
     volatile uint32_t CR2;
@@ -498,7 +612,11 @@ typedef struct {
     volatile uint32_t I2SCFGR;
     volatile uint32_t I2SPR;
 } reg_spi_t;
+<<<<<<< HEAD
 # 1446 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1446 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CR1;
     volatile uint32_t CR2;
@@ -509,12 +627,20 @@ typedef struct {
     volatile uint32_t CLRFR;
     volatile uint32_t DR;
 } reg_sai_block_t;
+<<<<<<< HEAD
 # 1464 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1464 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile reg_sai_block_t BLOCK1;
     volatile reg_sai_block_t BLOCK2;
 } reg_sai_t;
+<<<<<<< HEAD
 # 1498 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1498 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t SR;
     volatile uint32_t DR;
@@ -524,7 +650,11 @@ typedef struct {
     volatile uint32_t CR3;
     volatile uint32_t GPTR;
 } reg_usart_t;
+<<<<<<< HEAD
 # 1608 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1608 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t POWER;
     volatile uint32_t CLKCR;
@@ -546,7 +676,11 @@ typedef struct {
     volatile uint32_t FIFOCNT;
     volatile uint32_t FIFO;
 } reg_sdio_t;
+<<<<<<< HEAD
 # 1659 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1659 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t MCR;
     volatile uint32_t MSR;
@@ -595,7 +729,11 @@ typedef struct {
     volatile uint32_t FR[28][2];
 
 } reg_can_t;
+<<<<<<< HEAD
 # 1746 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1746 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t BCR1;
     volatile uint32_t BTR1;
@@ -614,11 +752,19 @@ typedef struct {
     uint32_t RESERVED4;
     volatile uint32_t BWTR4;
 } reg_fmc_sram_t;
+<<<<<<< HEAD
 # 1772 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
 typedef struct {
     reg_fmc_sram_t SRAM;
 } reg_fmc_t;
 # 1806 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1772 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+typedef struct {
+    reg_fmc_sram_t SRAM;
+} reg_fmc_t;
+# 1806 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t TYPER;
     volatile uint32_t CTRL;
@@ -626,7 +772,11 @@ typedef struct {
     volatile uint32_t RBAR;
     volatile uint32_t RASR;
 } reg_mpu_t;
+<<<<<<< HEAD
 # 1834 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1834 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CPUID;
     volatile uint32_t ICSR;
@@ -648,14 +798,22 @@ typedef struct {
     volatile uint32_t BFAR;
     volatile uint32_t AFSR;
 } reg_scb_t;
+<<<<<<< HEAD
 # 1876 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1876 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CTRL;
     volatile uint32_t LOAD;
     volatile uint32_t VAL;
     volatile uint32_t CALIB;
 } reg_stk_t;
+<<<<<<< HEAD
 # 1903 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1903 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t CPACR;
     uint32_t RESERVED[106];
@@ -663,16 +821,26 @@ typedef struct {
     volatile uint32_t FPCAR;
     volatile uint32_t FPDSCR;
 } reg_fpu_t;
+<<<<<<< HEAD
 # 1931 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+=======
+# 1931 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_stm32f4xx.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint32_t IDCODE;
     volatile uint32_t CR;
     volatile uint32_t APB1_FZ;
     volatile uint32_t APB2_FZ;
 } reg_dbg_t;
+<<<<<<< HEAD
 # 25 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h" 2
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h" 1
 # 31 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h"
+=======
+# 25 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h" 2
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h" 1
+# 31 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef enum {
     FALSE = 0u,
     TRUE = !FALSE,
@@ -731,8 +899,13 @@ typedef enum {
     PER_TIM4,
     PER_TIM5
 } hal_peripheral_t;
+<<<<<<< HEAD
 # 26 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h" 2
 # 35 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h"
+=======
+# 26 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h" 2
+# 35 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef enum {
     HAL_GPIO_MODE_IN = 0x00,
     HAL_GPIO_MODE_OUT = 0x01,
@@ -901,7 +1074,11 @@ typedef struct {
     hal_gpio_out_speed_t out_speed;
     hal_gpio_out_type_t out_type;
 } hal_gpio_output_t;
+<<<<<<< HEAD
 # 212 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h"
+=======
+# 212 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 void hal_gpio_reset(reg_gpio_t *port)
 __attribute__((deprecated("Please use GPIOx_RESET().")));
 
@@ -977,7 +1154,11 @@ void hal_gpio_bit_reset(reg_gpio_t *port, uint16_t pins);
 
 
 void hal_gpio_bit_toggle(reg_gpio_t *port, uint16_t pins);
+<<<<<<< HEAD
 # 295 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h"
+=======
+# 295 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_gpio.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 void hal_gpio_irq_set(reg_gpio_t *port,
                       uint16_t pins,
                       hal_gpio_trg_t edge,
@@ -995,9 +1176,15 @@ hal_bool_t hal_gpio_irq_status(uint16_t pin);
 
 
 void hal_gpio_irq_clear(uint16_t pin);
+<<<<<<< HEAD
 # 33 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_fmc.h" 1
 # 34 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_fmc.h"
+=======
+# 33 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_fmc.h" 1
+# 34 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_fmc.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef enum {
     HAL_FMC_SRAM_BANK1 = 0u,
     HAL_FMC_SRAM_BANK2 = 1u,
@@ -1069,7 +1256,11 @@ typedef struct {
     uint8_t data_latency;
     hal_fmc_access_mode_t mode;
 } hal_fmc_sram_timing_t;
+<<<<<<< HEAD
 # 114 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_fmc.h"
+=======
+# 114 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_fmc.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 void hal_fmc_reset(hal_fmc_bank_t bank)
 __attribute__((deprecated("Please use FMC_RESET().")));
 
@@ -1082,9 +1273,15 @@ __attribute__((deprecated("Please use FMC_RESET().")));
 void hal_fmc_init_sram(hal_fmc_bank_t bank,
                        hal_fmc_sram_init_t init,
                        hal_fmc_sram_timing_t timing);
+<<<<<<< HEAD
 # 34 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_pwr.h" 1
 # 34 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_pwr.h"
+=======
+# 34 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_pwr.h" 1
+# 34 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_pwr.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef enum {
     HAL_PWR_REGULATOR_MAIN = 0u,
     HAL_PWR_REGULATOR_LOWPOWER = 1u
@@ -1098,7 +1295,11 @@ typedef enum {
     HAL_PWR_LP_ENTRY_WFI = 0u,
     HAL_PWR_LP_ENTRY_WFE = 1u
 } hal_pwr_lp_entry_t;
+<<<<<<< HEAD
 # 55 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_pwr.h"
+=======
+# 55 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_pwr.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 void hal_pwr_reset(void)
 __attribute__((deprecated("Please use PWR_RESET().")));
 
@@ -1140,9 +1341,15 @@ hal_bool_t hal_pwr_set_overdrive(hal_bool_t status);
 
 
 hal_bool_t hal_pwr_set_underdrive(hal_bool_t status);
+<<<<<<< HEAD
 # 35 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_rcc.h" 1
 # 34 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_rcc.h"
+=======
+# 35 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_rcc.h" 1
+# 34 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_rcc.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef enum {
     HAL_RCC_OSC_HSI = 0u,
     HAL_RCC_OSC_HSE = 16u,
@@ -1206,7 +1413,11 @@ typedef struct {
     hal_rcc_ppre_t ppre1;
     hal_rcc_ppre_t ppre2;
 } hal_rcc_clk_init_t;
+<<<<<<< HEAD
 # 105 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_rcc.h"
+=======
+# 105 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_rcc.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 void hal_rcc_reset(void);
 
 
@@ -1216,7 +1427,11 @@ void hal_rcc_reset(void);
 
 void hal_rcc_set_peripheral(hal_peripheral_t peripheral, hal_bool_t status)
 __attribute__((deprecated("Please use XXX_ENABLE() or XXX_DISABLE().")));
+<<<<<<< HEAD
 # 123 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_rcc.h"
+=======
+# 123 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\\hal_rcc.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 hal_bool_t hal_rcc_set_osc(hal_rcc_osc_t osc, hal_bool_t status);
 
 
@@ -1232,10 +1447,17 @@ void hal_rcc_setup_pll(hal_rcc_osc_t pll, hal_rcc_pll_init_t init);
 
 
 void hal_rcc_setup_clock(hal_rcc_clk_init_t init);
+<<<<<<< HEAD
 # 36 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
 # 48 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h"
 void system_enter_run(void);
 # 57 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h"
+=======
+# 36 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h" 2
+# 48 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h"
+void system_enter_run(void);
+# 57 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\system_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 void system_enter_sleep(hal_pwr_lp_entry_t entry);
 
 
@@ -1253,8 +1475,13 @@ void system_enter_stop(hal_pwr_regulator_t regulator,
 void system_enter_standby(void);
 # 43 "RTE/Device/CT_Board_HS14_M0/system_ctboard.c" 2
 
+<<<<<<< HEAD
 # 1 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h" 1
 # 28 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+=======
+# 1 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h" 1
+# 28 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef union {
     struct {
         volatile uint8_t LED7_0;
@@ -1268,7 +1495,11 @@ typedef union {
     } HWORD;
     volatile uint32_t WORD;
 } reg_ct_led_t;
+<<<<<<< HEAD
 # 57 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+=======
+# 57 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef union {
     struct {
         volatile uint8_t DS0;
@@ -1295,12 +1526,20 @@ typedef union {
     } BYTE;
     volatile uint16_t HWORD;
 } reg_ct_seg7_bin_t;
+<<<<<<< HEAD
 # 91 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+=======
+# 91 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     reg_ct_seg7_raw_t RAW;
     reg_ct_seg7_bin_t BIN;
 } reg_ct_seg7_t;
+<<<<<<< HEAD
 # 110 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+=======
+# 110 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef union {
     struct {
         volatile uint8_t S7_0;
@@ -1314,7 +1553,11 @@ typedef union {
     } HWORD;
     volatile uint32_t WORD;
 } reg_ct_dipsw_t;
+<<<<<<< HEAD
 # 159 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+=======
+# 159 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint16_t RED;
     volatile uint16_t GREEN;
@@ -1366,14 +1609,22 @@ typedef union {
         volatile uint64_t B127_64;
     } DWORD;
 } reg_ct_lcd_bin_t;
+<<<<<<< HEAD
 # 218 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+=======
+# 218 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     volatile uint8_t ASCII[40];
     uint8_t RESERVED[8];
     reg_ct_lcd_bin_t BIN;
     reg_ct_lcd_bg_t BG;
 } reg_ct_lcd_t;
+<<<<<<< HEAD
 # 241 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+=======
+# 241 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef union {
     struct {
         volatile uint8_t P1;
@@ -1387,7 +1638,11 @@ typedef union {
     } HWORD;
     volatile uint32_t WORD;
 } reg_ct_gpio_port_t;
+<<<<<<< HEAD
 # 262 "C:/Users/ashas/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+=======
+# 262 "C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\\reg_ctboard.h"
+>>>>>>> 326232245e59e03a027ffb99ec74e6b4a3f1cda9
 typedef struct {
     reg_ct_gpio_port_t OUT;
     uint8_t RESERVED[12];
