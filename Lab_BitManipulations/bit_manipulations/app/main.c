@@ -50,7 +50,7 @@ int main(void)
 				uint8_t btn_value =0 ;
 				uint8_t push_event = 0;
 				uint8_t push_counter = 0; 
-				uint8_t edge_btn_state = 0x0;
+				uint8_t last_btn_value = 0x0;
 				uint8_t edge_pushed_value = 0x0;
 				uint8_t edge_push_event = 0;
 
@@ -91,7 +91,8 @@ int main(void)
 			}
 			
 			write_byte(ADDR_LED_31_24,push_counter);
-			edge_pushed_value = (btn_value) & (~edge_btn_state);
+			edge_pushed_value = (btn_value) & (~last_btn_value);
+			last_btn_value = btn_value;
 			
 			
 			
@@ -99,19 +100,19 @@ int main(void)
 			
 			
 			
-			if((edge_btn_state & bit_mask_t3) == bit_mask_t3) {
+			if((edge_pushed_value & bit_mask_t3) == bit_mask_t3) {
 					edge_push_event = read_byte(ADDR_DIP_SWITCH_7_0);
 					write_byte(ADDR_LED_23_16, edge_push_event);
 				}
-				else if((edge_btn_state & bit_mask_t2) == bit_mask_t2){
+				else if((edge_pushed_value & bit_mask_t2) == bit_mask_t2){
 					edge_push_event = (~edge_push_event);
 					write_byte(ADDR_LED_23_16, edge_push_event);
 				}
-				else if((edge_btn_state & bit_mask_t1) == bit_mask_t1){
+				else if((edge_pushed_value & bit_mask_t1) == bit_mask_t1){
 					edge_push_event = edge_push_event << 1;
 					write_byte(ADDR_LED_23_16, edge_push_event);
 				}
-				else if((edge_btn_state & bit_mask_t0) == bit_mask_t0){
+				else if((edge_pushed_value & bit_mask_t0) == bit_mask_t0){
 					edge_push_event = edge_push_event >> 1;
 					write_byte(ADDR_LED_23_16, edge_push_event);
 				}
@@ -124,7 +125,7 @@ int main(void)
 			
 			
 			
-			edge_btn_state = read_byte(ADDR_BUTTONS) & 0xF; 
+			
 			}
 			
 				
