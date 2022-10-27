@@ -1,0 +1,325 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; ------------------------------------------------------
+                       ------------
+    2 00000000         ; --  _____       ______  _____                         
+                                  -
+    3 00000000         ; -- |_   _|     |  ____|/ ____|                        
+                                  -
+    4 00000000         ; --   | |  _ __ | |__  | (___    Institute of Embedded 
+                       Systems    -
+    5 00000000         ; --   | | | '_ \|  __|  \___ \   Zurich University of  
+                                  -
+    6 00000000         ; --  _| |_| | | | |____ ____) |  Applied Sciences      
+                                  -
+    7 00000000         ; -- |_____|_| |_|______|_____/   8401 Winterthur, Switz
+                       erland     -
+    8 00000000         ; ------------------------------------------------------
+                       ------------
+    9 00000000         ; --
+   10 00000000         ; -- add64.s
+   11 00000000         ; --
+   12 00000000         ; -- CT1 P05 64 Bit Addition
+   13 00000000         ; --
+   14 00000000         ; -- $Id: add64.s 3712 2016-10-20 08:44:57Z kesr $
+   15 00000000         ; ------------------------------------------------------
+                       ------------
+   16 00000000         ;Directives
+   17 00000000                 PRESERVE8
+   18 00000000                 THUMB
+   19 00000000         
+   20 00000000         ; ------------------------------------------------------
+                       ------------
+   21 00000000         ; -- Symbolic Literals
+   22 00000000         ; ------------------------------------------------------
+                       ------------
+   23 00000000 60000200 
+                       ADDR_DIP_SWITCH_31_0
+                               EQU              0x60000200
+   24 00000000 60000210 
+                       ADDR_BUTTONS
+                               EQU              0x60000210
+   25 00000000 60000340 
+                       ADDR_LCD_RED
+                               EQU              0x60000340
+   26 00000000 60000342 
+                       ADDR_LCD_GREEN
+                               EQU              0x60000342
+   27 00000000 60000344 
+                       ADDR_LCD_BLUE
+                               EQU              0x60000344
+   28 00000000 60000330 
+                       ADDR_LCD_BIN
+                               EQU              0x60000330
+   29 00000000 60000338 
+                       ADDR_LCD
+                               EQU              0x60000338
+   30 00000000 00000001 
+                       MASK_KEY_T0
+                               EQU              0x00000001
+   31 00000000 0000FFFF 
+                       BACKLIGHT_FULL
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                               EQU              0xffff
+   32 00000000         
+   33 00000000         ; ------------------------------------------------------
+                       ------------
+   34 00000000         ; -- myCode
+   35 00000000         ; ------------------------------------------------------
+                       ------------
+   36 00000000                 AREA             MyCode, CODE, READONLY
+   37 00000000         
+   38 00000000         main    PROC
+   39 00000000                 EXPORT           main
+   40 00000000         
+   41 00000000         user_prog
+   42 00000000 4F0E            LDR              R7, =ADDR_LCD_GREEN ; load base
+                                                             address of pwm blu
+                                                            e
+   43 00000002 4E0F            LDR              R6, =BACKLIGHT_FULL ; backlight
+                                                             full blue
+   44 00000004 803E            STRH             R6, [R7]    ; write pwm registe
+                                                            r
+   45 00000006         
+   46 00000006 480F            LDR              R0, =0      ; lower 32 bits of 
+                                                            total sum
+   47 00000008 490E            LDR              R1, =0      ; higher 32 bits of
+                                                             total sum
+   48 0000000A 4C0E            LDR              R4, =0
+   49 0000000C         endless
+   50 0000000C F000 F80A       BL               waitForKey  ; wait for key T0 t
+                                                            o be pressed
+   51 00000010         
+   52 00000010         ; STUDENTS: To be programmed
+   53 00000010 4A0D            LDR              R2,=ADDR_LCD_BIN
+   54 00000012 4B0E            LDR              R3,=ADDR_DIP_SWITCH_31_0
+   55 00000014 681B            LDR              R3,[R3]
+   56 00000016 18C0            ADDS             R0,R0,R3
+   57 00000018 4161            ADCS             R1,R1,R4
+   58 0000001A 6010            STR              R0,[R2]     ;lower 32 sum in bi
+                                                            nary LCD
+   59 0000001C 4D0C            LDR              R5,=ADDR_LCD
+   60 0000001E 6029            STR              R1,[R5]     ;higer 32 sum in LC
+                                                            D
+   61 00000020         
+   62 00000020         
+   63 00000020         
+   64 00000020         ; END: To be programmed
+   65 00000020 E7F4            B                endless
+   66 00000022 00 00           ALIGN
+   67 00000024         
+   68 00000024         
+   69 00000024         ;----------------------------------------------------
+   70 00000024         ; Subroutines
+   71 00000024         ;----------------------------------------------------
+   72 00000024         
+   73 00000024         ; wait for key to be pressed and released
+   74 00000024         waitForKey
+   75 00000024 B407            PUSH             {R0, R1, R2}
+   76 00000026 490B            LDR              R1, =ADDR_BUTTONS ; laod base a
+                                                            ddress of keys
+   77 00000028 4A0B            LDR              R2, =MASK_KEY_T0 
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                                                            ; load key mask T0
+   78 0000002A         
+   79 0000002A         waitForPress
+   80 0000002A 7808            LDRB             R0, [R1]    ; load key values
+   81 0000002C 4210            TST              R0, R2      ; check, if key T0 
+                                                            is pressed
+   82 0000002E D0FC            BEQ              waitForPress
+   83 00000030         
+   84 00000030         waitForRelease
+   85 00000030 7808            LDRB             R0, [R1]    ; load key values
+   86 00000032 4210            TST              R0, R2      ; check, if key T0 
+                                                            is released
+   87 00000034 D1FC            BNE              waitForRelease
+   88 00000036         
+   89 00000036 BC07            POP              {R0, R1, R2}
+   90 00000038 4770            BX               LR
+   91 0000003A 00 00           ALIGN
+   92 0000003C         
+   93 0000003C         ; ------------------------------------------------------
+                       ------------
+   94 0000003C         ; End of code
+   95 0000003C         ; ------------------------------------------------------
+                       ------------
+   96 0000003C                 ENDP
+   97 0000003C                 END
+              60000342 
+              0000FFFF 
+              00000000 
+              60000330 
+              60000200 
+              60000338 
+              60000210 
+              00000001 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --depend=.\bu
+ild\add64.d -o.\build\add64.o -I.\RTE\_Target_1 -IC:\Users\ashas\AppData\Local\
+Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include -IC:\Users\ashas\AppData\Loca
+l\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include\m0 -IC:\Users\ashas\AppData
+\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\HAL\Include --predefine="__EVAL SETA 
+1" --predefine="__UVISION_VERSION SETA 537" --predefine="_RTE_ SETA 1" --predef
+ine="_RTE_ SETA 1" --list=.\build\add64.lst app\add64.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MyCode 00000000
+
+Symbol: MyCode
+   Definitions
+      At line 36 in file app\add64.s
+   Uses
+      None
+Comment: MyCode unused
+endless 0000000C
+
+Symbol: endless
+   Definitions
+      At line 49 in file app\add64.s
+   Uses
+      At line 65 in file app\add64.s
+Comment: endless used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 38 in file app\add64.s
+   Uses
+      At line 39 in file app\add64.s
+Comment: main used once
+user_prog 00000000
+
+Symbol: user_prog
+   Definitions
+      At line 41 in file app\add64.s
+   Uses
+      None
+Comment: user_prog unused
+waitForKey 00000024
+
+Symbol: waitForKey
+   Definitions
+      At line 74 in file app\add64.s
+   Uses
+      At line 50 in file app\add64.s
+Comment: waitForKey used once
+waitForPress 0000002A
+
+Symbol: waitForPress
+   Definitions
+      At line 79 in file app\add64.s
+   Uses
+      At line 82 in file app\add64.s
+Comment: waitForPress used once
+waitForRelease 00000030
+
+Symbol: waitForRelease
+   Definitions
+      At line 84 in file app\add64.s
+   Uses
+      At line 87 in file app\add64.s
+Comment: waitForRelease used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+ADDR_BUTTONS 60000210
+
+Symbol: ADDR_BUTTONS
+   Definitions
+      At line 24 in file app\add64.s
+   Uses
+      At line 76 in file app\add64.s
+Comment: ADDR_BUTTONS used once
+ADDR_DIP_SWITCH_31_0 60000200
+
+Symbol: ADDR_DIP_SWITCH_31_0
+   Definitions
+      At line 23 in file app\add64.s
+   Uses
+      At line 54 in file app\add64.s
+Comment: ADDR_DIP_SWITCH_31_0 used once
+ADDR_LCD 60000338
+
+Symbol: ADDR_LCD
+   Definitions
+      At line 29 in file app\add64.s
+   Uses
+      At line 59 in file app\add64.s
+Comment: ADDR_LCD used once
+ADDR_LCD_BIN 60000330
+
+Symbol: ADDR_LCD_BIN
+   Definitions
+      At line 28 in file app\add64.s
+   Uses
+      At line 53 in file app\add64.s
+Comment: ADDR_LCD_BIN used once
+ADDR_LCD_BLUE 60000344
+
+Symbol: ADDR_LCD_BLUE
+   Definitions
+      At line 27 in file app\add64.s
+   Uses
+      None
+Comment: ADDR_LCD_BLUE unused
+ADDR_LCD_GREEN 60000342
+
+Symbol: ADDR_LCD_GREEN
+   Definitions
+      At line 26 in file app\add64.s
+   Uses
+      At line 42 in file app\add64.s
+Comment: ADDR_LCD_GREEN used once
+ADDR_LCD_RED 60000340
+
+Symbol: ADDR_LCD_RED
+   Definitions
+      At line 25 in file app\add64.s
+   Uses
+      None
+Comment: ADDR_LCD_RED unused
+BACKLIGHT_FULL 0000FFFF
+
+Symbol: BACKLIGHT_FULL
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 31 in file app\add64.s
+   Uses
+      At line 43 in file app\add64.s
+Comment: BACKLIGHT_FULL used once
+MASK_KEY_T0 00000001
+
+Symbol: MASK_KEY_T0
+   Definitions
+      At line 30 in file app\add64.s
+   Uses
+      At line 77 in file app\add64.s
+Comment: MASK_KEY_T0 used once
+9 symbols
+351 symbols in table

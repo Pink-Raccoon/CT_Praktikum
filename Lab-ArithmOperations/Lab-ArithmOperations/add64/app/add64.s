@@ -26,6 +26,7 @@ ADDR_LCD_RED                EQU     0x60000340
 ADDR_LCD_GREEN              EQU     0x60000342
 ADDR_LCD_BLUE               EQU     0x60000344
 ADDR_LCD_BIN                EQU     0x60000330
+ADDR_LCD					EQU		0x60000338
 MASK_KEY_T0                 EQU     0x00000001
 BACKLIGHT_FULL              EQU     0xffff
 
@@ -38,17 +39,25 @@ main    PROC
         EXPORT main
 
 user_prog
-        LDR     R7, =ADDR_LCD_BLUE              ; load base address of pwm blue
+        LDR     R7, =ADDR_LCD_GREEN              ; load base address of pwm blue
         LDR     R6, =BACKLIGHT_FULL             ; backlight full blue
         STRH    R6, [R7]                        ; write pwm register
 
         LDR     R0, =0                          ; lower 32 bits of total sum
         LDR     R1, =0                          ; higher 32 bits of total sum
+		LDR		R4, =0
 endless
         BL      waitForKey                      ; wait for key T0 to be pressed
 
         ; STUDENTS: To be programmed
-
+		LDR		R2,=ADDR_LCD_BIN
+		LDR		R3,=ADDR_DIP_SWITCH_31_0
+		LDR		R3,[R3]
+		ADDS	R0,R0,R3
+		ADCS	R1,R1,R4
+		STR		R0,[R2]							;lower 32 sum in binary LCD
+		LDR     R5,=ADDR_LCD
+		STR		R1,[R5]							;higer 32 sum in LCD
 
 
 
