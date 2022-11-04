@@ -55,9 +55,9 @@ ARM Macro Assembler    Page 1
    28 00000000 60000330 
                        ADDR_LCD_BIN
                                EQU              0x60000330
-   29 00000000 60000338 
+   29 00000000 60000334 
                        ADDR_LCD
-                               EQU              0x60000338
+                               EQU              0x60000334
    30 00000000 00000001 
                        MASK_KEY_T0
                                EQU              0x00000001
@@ -164,7 +164,7 @@ ARM Macro Assembler    Page 3
               00000000 
               60000330 
               60000200 
-              60000338 
+              60000334 
               60000210 
               00000001 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --depend=.\bu
@@ -259,7 +259,7 @@ Symbol: ADDR_DIP_SWITCH_31_0
    Uses
       At line 54 in file app\add64.s
 Comment: ADDR_DIP_SWITCH_31_0 used once
-ADDR_LCD 60000338
+ADDR_LCD 60000334
 
 Symbol: ADDR_LCD
    Definitions

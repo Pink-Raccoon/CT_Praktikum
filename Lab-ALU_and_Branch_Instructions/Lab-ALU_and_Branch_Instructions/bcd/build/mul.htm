@@ -1,9 +1,9 @@
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html><head>
-<title>Static Call Graph - [.\build\sum_diff.axf]</title></head>
+<title>Static Call Graph - [.\build\mul.axf]</title></head>
 <body><HR>
-<H1>Static Call Graph for image .\build\sum_diff.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sat Oct 29 10:52:01 2022
+<H1>Static Call Graph for image .\build\mul.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sat Oct 29 11:34:55 2022
 <BR><P>
 <H3>Maximum Stack Usage =        132 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -11,7 +11,8 @@ __system &rArr; system_enter_run &rArr; hal_gpio_init_alternate &rArr; hal_gpio_
 <P>
 <H3>
 Mutually Recursive functions
-</H3> <LI><a href="#[1]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1]">NMI_Handler</a><BR>
+</H3> <LI><a href="#[65]">main</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[65]">main</a><BR>
+ <LI><a href="#[1]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1]">NMI_Handler</a><BR>
  <LI><a href="#[2]">HardFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[2]">HardFault_Handler</a><BR>
  <LI><a href="#[3]">MemManage_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[3]">MemManage_Handler</a><BR>
  <LI><a href="#[4]">BusFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4]">BusFault_Handler</a><BR>
@@ -21,7 +22,6 @@ Mutually Recursive functions
  <LI><a href="#[8]">PendSV_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8]">PendSV_Handler</a><BR>
  <LI><a href="#[9]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[9]">SysTick_Handler</a><BR>
  <LI><a href="#[1c]">ADC_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1c]">ADC_IRQHandler</a><BR>
- <LI><a href="#[65]">main</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[65]">main</a><BR>
 </UL>
 <P>
 <H3>
@@ -130,7 +130,7 @@ Function Pointers
  <LI><a href="#[a]">WWDG_IRQHandler</a> from startup_ctboard.o(.text) referenced from startup_ctboard.o(RESET)
  <LI><a href="#[67]">__main</a> from datainit_ctboard.o(.text) referenced from startup_ctboard.o(.text)
  <LI><a href="#[66]">__system</a> from system_ctboard.o(.text) referenced from startup_ctboard.o(.text)
- <LI><a href="#[65]">main</a> from sumdiff.o(MyCode) referenced from datainit_ctboard.o(.text)
+ <LI><a href="#[65]">main</a> from main.o(myCode) referenced from datainit_ctboard.o(.text)
 </UL>
 <P>
 <H3>
@@ -597,7 +597,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_enter_run
 </UL>
 
-<P><STRONG><a name="[65]"></a>main</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, sumdiff.o(MyCode))
+<P><STRONG><a name="[65]"></a>main</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, main.o(myCode))
 <BR><BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
