@@ -1,0 +1,386 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Asha Schwegler, ZHAW, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+D:\ZHAW_Code\CT_Praktikum\Assembly_ControlStructures\ForLoop.uvprojx
+Project File Date:  11/08/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling datainit_ctboard.s...
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_fmc.h(24): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
+    PER_ADC1,       // APB2
+                    ^
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_fmc.h(71): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+    HAL_FMC_ACCESS_MODE_D = 3u,     /**< Access mode D. */
+                              ^~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(19): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
+//    volatile uint32_t HR[5];
+^
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(38): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+        default:
+        ^
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(82): warning: // comments are not allowed in this language [-Wcomment]
+    timing.clk_divider -= 1u;  // 0b0001 -> clk / 2
+                               ^
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(97): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    reg_cr |= (init.type << 2u);
+           ~~  ~~~~~~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(98): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    reg_cr |= (init.width << 4u);
+           ~~  ~~~~~~~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(102): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        reg_tr |= (timing.address_setup << 0u);
+               ~~  ~~~~~~~~~~~~~~~~~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(103): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        reg_tr |= (timing.address_hold << 4u);
+               ~~  ~~~~~~~~~~~~~~~~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(104): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        reg_tr |= (timing.data_setup << 8u);
+               ~~  ~~~~~~~~~~~~~~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(105): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        reg_tr |= (timing.mode << 28u);
+               ~~  ~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(109): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        reg_tr |= (timing.clk_divider << 20u);
+               ~~  ~~~~~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(110): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        reg_tr |= (timing.data_latency << 24u);
+               ~~  ~~~~~~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(113): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    reg_tr |= (timing.bus_turnaround << 16u);
+           ~~  ~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_fmc.c(117): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+        default:
+        ^
+15 warnings generated.
+compiling hal_fmc.c...
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(42): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\system_ctboard.h(32): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(24): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
+//    volatile uint32_t HR[5];
+^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(42): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\system_ctboard.h(32): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(25): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
+    PER_ADC1,       // APB2
+                    ^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(42): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\system_ctboard.h(32): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(168): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+    HAL_GPIO_PIN_All = 0xffff,
+                             ^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(42): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\system_ctboard.h(33): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_fmc.h(71): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+    HAL_FMC_ACCESS_MODE_D = 3u,     /**< Access mode D. */
+                              ^~
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(77): warning: no previous prototype for function '__system' [-Wmissing-prototypes]
+void __system(void)
+     ^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(77): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void __system(void)
+^
+static 
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(105): warning: unused parameter 'entry' [-Wunused-parameter]
+void system_enter_sleep(hal_pwr_lp_entry_t entry)
+                                           ^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(114): warning: unused parameter 'regulator' [-Wunused-parameter]
+void system_enter_stop(hal_pwr_regulator_t regulator, hal_pwr_lp_entry_t entry)
+                                           ^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(114): warning: unused parameter 'entry' [-Wunused-parameter]
+void system_enter_stop(hal_pwr_regulator_t regulator, hal_pwr_lp_entry_t entry)
+                                                                         ^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(146): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    PWR_RESET();
+    ^~~~~~~~~~~
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(178): note: expanded from macro 'PWR_RESET'
+#define PWR_RESET()             REG_TGL(RCC->APB1RSTR,  PWR_RCC_PATTERN)
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(31): note: expanded from macro 'REG_TGL'
+                                    REG_CLR((REG), (BIT));  \
+                                    ^~~~~~~~~~~~~~~~~~~~~
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(26): note: expanded from macro 'REG_CLR'
+#define REG_CLR(REG, BIT)       ( (REG) &= ~(BIT) )
+                                        ~~ ^~~~~~
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(42): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\system_ctboard.h(35): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_rcc.h(78): warning: padding struct 'hal_rcc_pll_init_t' with 1 byte to align 'n_factor' [-Wpadded]
+    uint16_t n_factor;
+             ^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(174): warning: // comments are not allowed in this language [-Wcomment]
+        clk_init.hpre = HAL_RCC_HPRE_2;     // -> AHB clock : 84 MHz
+                                            ^
+RTE/Device/CT_Board_HS14_M0/system_ctboard.c(42): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\system_ctboard.h(32): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(197): warning: padding size of 'hal_gpio_output_t' with 1 byte to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+12 warnings generated.
+compiling system_ctboard.c...
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(24): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
+//    volatile uint32_t HR[5];
+^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(25): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
+    PER_ADC1,       // APB2
+                    ^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_adc.h(54): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+    HAL_ADC_VBAT = 18u,             /**< Battery voltage (only ADC1) */
+                      ^~
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(43): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+    reg = (init.scan_mode << 8u) |
+        ~ ~~~~~~~~~~~~~~~~~~~~~~~^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(50): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+          (init.polarity << 28u) |
+          ~~~~~~~~~~~~~~~~~~~~~~~^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(58): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+        reg = ((init.nr_conversions - 1) << 20u);
+            ~  ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(60): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    adc->SQR1 &= ~(0xf << 20u);
+              ~~ ^~~~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(120): warning: // comments are not allowed in this language [-Wcomment]
+    } else {//if (channel >= HAL_ADC_CH0) {
+            ^
+RTE/HAL/CT_Board_HS14_M0/hal_adc.c(145): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    adc->CR2 &= ~(0x1 << 30u);
+             ~~ ^~~~~~~~~~~~~
+9 warnings generated.
+compiling hal_adc.c...
+RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_pwr.h(24): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
+    PER_ADC1,       // APB2
+                    ^
+RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(19): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
+//    volatile uint32_t HR[5];
+^
+RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(117): warning: unused parameter 'status' [-Wunused-parameter]
+hal_bool_t hal_pwr_set_overdrive(hal_bool_t status)
+                                            ^
+RTE/HAL/CT_Board_HS14_M0/hal_pwr.c(128): warning: unused parameter 'status' [-Wunused-parameter]
+hal_bool_t hal_pwr_set_underdrive(hal_bool_t status)
+                                             ^
+4 warnings generated.
+compiling hal_pwr.c...
+mian.c(1): warning: In file included from...
+./utils_ctboard.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+1 warning generated.
+compiling mian.c...
+utils_ctboard.c(17): warning: In file included from...
+./utils_ctboard.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+1 warning generated.
+compiling utils_ctboard.c...
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_rcc.h(24): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
+    PER_ADC1,       // APB2
+                    ^
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(19): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
+//    volatile uint32_t HR[5];
+^
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(37): warning: // comments are not allowed in this language [-Wcomment]
+    RCC->CR |= 0x00000001;   // Set HSION bit first -> keep cpu running
+                             ^
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(189): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+        default:
+        ^
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_rcc.h(78): warning: padding struct 'hal_rcc_pll_init_t' with 1 byte to align 'n_factor' [-Wpadded]
+    uint16_t n_factor;
+             ^
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(280): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    RCC->PLLCFGR &= ~(0x3f);
+                 ~~ ^~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(286): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+            RCC->PLLCFGR &= ~0x0f037fc0;
+                         ~~ ^~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(287): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+            RCC->PLLCFGR |= (init.n_factor << 6u);
+                         ~~  ~~~~~~~~~~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(288): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+            RCC->PLLCFGR |= (((init.p_divider - 1) >> 1u) << 16u);
+                         ~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(289): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+            RCC->PLLCFGR |= (init.q_divider << 24u);
+                         ~~  ~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(293): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+            RCC->PLLI2SCFGR &= ~0x7f007fc0;
+                            ~~ ^~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(294): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+            RCC->PLLI2SCFGR |= (init.n_factor << 6u);
+                            ~~  ~~~~~~~~~~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(295): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+            RCC->PLLI2SCFGR |= (init.q_divider << 24u);
+                            ~~  ~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(296): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+            RCC->PLLI2SCFGR |= (init.r_divider << 28u);
+                            ~~  ~~~~~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(284): warning: enumeration values 'HAL_RCC_OSC_HSI', 'HAL_RCC_OSC_HSE', and 'HAL_RCC_OSC_PLLSAI' not explicitly handled in switch [-Wswitch-enum]
+    switch (pll) {
+            ^~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(320): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    RCC->CFGR &= ~0x0000fcf0;
+              ~~ ^~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(321): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    RCC->CFGR |= (init.hpre << 4u);
+              ~~  ~~~~~~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(322): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    RCC->CFGR |= (init.ppre1 << 10u);
+              ~~  ~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(323): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    RCC->CFGR |= (init.ppre2 << 13u);
+              ~~  ~~~~~~~~~~~^~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(326): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    RCC->CFGR &= ~0x00000003;
+              ~~ ^~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_rcc.c(327): warning: enumeration values 'HAL_RCC_OSC_PLLI2S' and 'HAL_RCC_OSC_PLLSAI' not explicitly handled in switch [-Wswitch-enum]
+    switch (init.osc) {
+            ^~~~~~~~
+21 warnings generated.
+compiling hal_rcc.c...
+assembling startup_ctboard.s...
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(24): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include\reg_stm32f4xx.h(1181): warning: // comments are not allowed in this language [-Wcomment]
+//    volatile uint32_t HR[5];
+^
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(25): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include/hal_common.h(59): warning: // comments are not allowed in this language [-Wcomment]
+    PER_ADC1,       // APB2
+                    ^
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(18): warning: In file included from...
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(168): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+    HAL_GPIO_PIN_All = 0xffff,
+                             ^
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(187): warning: padding size of 'hal_gpio_input_t' with 1 byte to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include\hal_gpio.h(197): warning: padding size of 'hal_gpio_output_t' with 1 byte to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(207): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+        port->BSRR = (pins << 16);
+                   ~  ~~~~~^~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(264): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                    SYSCFG->EXTICR1 &= ~(0xf << syscfg_shift);
+                                    ~~ ^~~~~~~~~~~~~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(267): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                    SYSCFG->EXTICR2 &= ~(0xf << syscfg_shift);
+                                    ~~ ^~~~~~~~~~~~~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(270): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                    SYSCFG->EXTICR3 &= ~(0xf << syscfg_shift);
+                                    ~~ ^~~~~~~~~~~~~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(273): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                    SYSCFG->EXTICR4 &= ~(0xf << syscfg_shift);
+                                    ~~ ^~~~~~~~~~~~~~~~~~~~~~
+RTE/HAL/CT_Board_HS14_M0/hal_gpio.c(366): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                mask |= pattern << (pos * pattern_bit_width);
+                     ~~ ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+11 warnings generated.
+compiling hal_gpio.c...
+linking...
+Program Size: Code=3512 RO-data=428 RW-data=0 ZI-data=8192  
+".\ForLoop.axf" - 0 Error(s), 74 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: InES
+                https://ennis.zhaw.ch/pack/InES.CTBoard14_DFP.4.0.2.pack
+                InES.CTBoard14_DFP.4.0.2
+                CT Board 14 (STM32F429ZI) Device Support
+   * Component: Startup Version: 4.0.1
+   * Component: ADC Version: 4.0.1
+   * Component: FMC Version: 3.0.1
+   * Component: GPIO Version: 4.0.1
+   * Component: PWR Version: 2.2.0
+   * Component: RCC Version: 4.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include
+  C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/Device/Include/m0
+  C:/Users/Asha/AppData/Local/Arm/Packs/InES/CTBoard14_DFP/4.0.2/HAL/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: InES::Device:Startup:4.0.1
+      Source file:   Device/Source/system_ctboard.c
+      Source file:   Device/Source/startup_ctboard.s
+      Include file:  Device/Include/reg_ctboard.h
+      Include file:  Device/Include/m0/platform_ctboard.h
+      Include file:  Device/Include/system_ctboard.h
+      Source file:   Device/Source/datainit_ctboard.s
+      Include file:  Device/Include/reg_stm32f4xx.h
+
+   * Component: InES::HAL:ADC:4.0.1
+      Include file:  HAL/Include/hal_adc.h
+      Include file:  HAL/Include/hal_common.h
+      Source file:   HAL/Source/hal_adc.c
+      Include file:  Device/Include/reg_stm32f4xx.h
+
+   * Component: InES::HAL:FMC:3.0.1
+      Include file:  HAL/Include/hal_common.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_fmc.h
+      Source file:   HAL/Source/hal_fmc.c
+
+   * Component: InES::HAL:GPIO:4.0.1
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_gpio.h
+      Source file:   HAL/Source/hal_gpio.c
+
+   * Component: InES::HAL:PWR:2.2.0
+      Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_pwr.h
+      Source file:   HAL/Source/hal_pwr.c
+      Include file:  Device/Include/reg_stm32f4xx.h
+
+   * Component: InES::HAL:RCC:4.0.1
+      Include file:  HAL/Include/hal_rcc.h
+      Include file:  HAL/Include/hal_common.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Source file:   HAL/Source/hal_rcc.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
