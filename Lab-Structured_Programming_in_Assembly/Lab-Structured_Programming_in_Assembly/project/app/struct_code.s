@@ -31,7 +31,7 @@ ADDR_LCD_COLOUR           EQU        0x60000340
 ADDR_LCD_ASCII            EQU        0x60000300
 ADDR_LCD_ASCII_BIT_POS    EQU        0x60000302
 ADDR_LCD_ASCII_2ND_LINE   EQU        0x60000314
-S3_Mask					  EQU		 0x00000008
+
 
 ; ------------------------------------------------------------------
 ; -- Program-Defines
@@ -77,74 +77,145 @@ main    PROC
 
 main_loop
 ; STUDENTS: To be programmed
-		;Check if button is pressed
-		LDR			R0, =ADDR_BUTTONS
-		LDRB		R0, [R0]
-		MOVS		R1, #0x01
-		TST			R0,R1							; R0 && 1
-		BNE			button_pressed					; if and = 1 then Z = 0 so NE to test if 1
-		
 
+		BL		adc_get_value
+		LDR		R7, =ADDR_7_SEG_BIN_DS3_0		
+		LDR		R6, =ADDR_BUTTONS
+		LDR		R1, [R6]
+		MOVS	R4, #0x1
+		MOVS	R5, #0xff
+		TST		R1, R4
+		BNE		ifGreen
 		
-display		;display adc value on 7 seg display
-		;call adc_get_value
-		BL			adc_get_value					;stores value in R0
-		MOVS		R7, R0
-		LDR			R3, =ADDR_7_SEG_BIN_DS3_0
-		STR			R7,	[R3]
+ifBlueRed
+		LDR		R6, =ADDR_LED_31_0
+		MOVS	R4, #0x0
+		STR		R4, [R6]
+		LDR 	R6, =ADDR_DIP_SWITCH_7_0
+		LDRB	R1, [R6]
+		SUBS	R1, R1, R0
+		CMP		R1, R4
+		BGE		ifBlue
+ifRed
+		BL		lcdRed
+		MOVS 	R0, R1
+		MOVS	R3, #0x0
+		MOVS	R4, #0x8
+		B		redLoopTest
+redLoop
+		LSRS	R0, #0x1
+		BCS		endIfZeroShifted
+ifZeroShifted
+		ADDS	R3, #0x1
+endIfZeroShifted
+		SUBS	R4, #0x1
+redLoopTest
+		BNE		redLoop
 		
-		MOVS		R1, R7
-		LSRS		R1, R1, #3
-		MOVS		R2, #0x0000
-		CMP			R1, R2
-		BEQ			make_one
-		BL			calculate_bar_ones
-make_one
-		ADDS		R2, R2, #0x01
-		B			make_led_bar
+		LDR		R6, =ADDR_LCD_ASCII_2ND_LINE
+		ADDS	R3, #0x30
+		STR		R3, [R6]
+
+		B		endIfBlueRed
+ifBlue
+		BL		lcdBlue
+		BL		clear_lcd
+endIfBlueRed
+		ANDS	R1, R1, R5
+		STRH	R1, [R7]
+		B		endIfGreen
+
+ifGreen
 		
-calculate_bar_ones
-		CMP			R1,R2
-		BLO			make_led_bar
-		LSLS		R2, R2, #0x01
-		ADDS		R2, R2, #0x01
-		B			calculate_bar_ones
+		BL 		lcdGreen
+		BL		clear_lcd
+		ANDS	R0, R0, R5
+		STRH	R0, [R7]
+				
+		LSRS	R0, #0x3
+		MOVS	R3, #0x1
+		MOVS	R4, #0x0
 		
-make_led_bar
-		LDR			R0, =ADDR_LED_31_0
-		MOVS		R5, #0x00FF
-		ANDS		R2, R2, R5 
-		STR			R2, [R0]
+		B		greenLoopTest
+greenLoop
+		LSLS	R3, #0x1
+		ADDS	R3, #0x1
+		SUBS	R0, #0x1
+
+greenLoopTest
+		CMP		R0, R4
+		BNE		greenLoop
 		
-
-
-
+		LDR		R6, =ADDR_LED_31_0
+		STR		R3, [R6]
 		
-		
-
-
-						
-
-
+endIfGreen
 
 ; END: To be programmed
         B          main_loop
-
-
-;---------------------------------------------------------subroutines		
-adc_divide_by_eight
-		LSRS		R0, R1, #3
-		BX			LR
+	
+; procedures	
+lcdRed
+		PUSH	{ R1, R5-R7, LR }
 		
-button_pressed
-		;set background of LCD to green
-		LDR			R0, =ADDR_LCD_COLOUR
-		LDR			R1, =0xffff
-		LDR			R2, =DISPLAY_COLOUR_GREEN
-		STRH		R1, [R0, R2]
+		BL		lcdOff
+		BL		loadLcdAddr
+		BL		loadFullLight
+		LDR		R6, =DISPLAY_COLOUR_RED
+		STR		R1, [R7, R6]
+		
+		POP		{ R1, R5-R7, PC }
+			
+lcdBlue
+		PUSH	{ R1, R5-R7, LR }
+		
+		BL		lcdOff
+		BL		loadLcdAddr
+		BL		loadFullLight
+		LDR		R6, =DISPLAY_COLOUR_BLUE
+		STR		R1, [R7, R6]
+		
+		POP		{ R1, R5-R7, PC }
+			
+lcdGreen	
+		PUSH	{ R1, R5-R7, LR }
+		
+		BL		lcdOff
+		BL		loadLcdAddr
+		BL		loadFullLight
+		LDR		R6, =DISPLAY_COLOUR_GREEN
+		STR		R1, [R7, R6]
+		
+		POP		{ R1, R5-R7, PC }
+		
+lcdOff
+		PUSH 	{ R1, R6-R7, LR }
+		
+		BL		loadNoLight
+		BL		loadLcdAddr
+		LDR		R6, =DISPLAY_COLOUR_RED
+		STR		R1, [R7, R6]
+		LDR		R6, =DISPLAY_COLOUR_BLUE
+		STR		R1, [R7, R6]
+		LDR		R6, =DISPLAY_COLOUR_GREEN
+		STR		R1, [R7, R6]
+		
+		POP		{ R1, R6-R7, PC }
+		
+loadFullLight
+		LDR		R1, =0xFFFF
+		BX		LR		
+		
+loadNoLight
+		LDR		R1, =0x0
+		BX		LR
 
-		B			display
-;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+loadLcdAddr			
+		LDR		R7, =ADDR_LCD_COLOUR
+		BX		LR
+			
+; end procedures
+        
 clear_lcd
         PUSH       {R0, R1, R2}
         LDR        R2, =0x0
@@ -153,7 +224,7 @@ clear_lcd_loop
         ADDS       R0, R0, R2                       ; add index to lcd offset
         LDR        R1, =ASCII_DIGIT_CLEAR
         STR        R1, [R0]
-        ADDS       R2, R2, #4                       ; increas index by 4 (word step)
+        ADDS       R2, R2, #0x4                       ; increas index by 4 (word step)
         CMP        R2, #LCD_LAST_OFFSET             ; until index reached last lcd point
         BMI        clear_lcd_loop
         POP        {R0, R1, R2}
