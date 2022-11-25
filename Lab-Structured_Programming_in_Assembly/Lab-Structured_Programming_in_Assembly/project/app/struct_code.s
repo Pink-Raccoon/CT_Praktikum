@@ -31,7 +31,7 @@ ADDR_LCD_COLOUR           EQU        0x60000340
 ADDR_LCD_ASCII            EQU        0x60000300
 ADDR_LCD_ASCII_BIT_POS    EQU        0x60000302
 ADDR_LCD_ASCII_2ND_LINE   EQU        0x60000314
-
+S3_Mask					  EQU		 0x00000008
 
 ; ------------------------------------------------------------------
 ; -- Program-Defines
@@ -77,13 +77,74 @@ main    PROC
 
 main_loop
 ; STUDENTS: To be programmed
+		;Check if button is pressed
+		LDR			R0, =ADDR_BUTTONS
+		LDRB		R0, [R0]
+		MOVS		R1, #0x01
+		TST			R0,R1							; R0 && 1
+		BNE			button_pressed					; if and = 1 then Z = 0 so NE to test if 1
+		
 
+		
+display		;display adc value on 7 seg display
+		;call adc_get_value
+		BL			adc_get_value					;stores value in R0
+		MOVS		R7, R0
+		LDR			R3, =ADDR_7_SEG_BIN_DS3_0
+		STR			R7,	[R3]
+		
+		MOVS		R1, R7
+		LSRS		R1, R1, #3
+		MOVS		R2, #0x0000
+		CMP			R1, R2
+		BEQ			make_one
+		BL			calculate_bar_ones
+make_one
+		ADDS		R2, R2, #0x01
+		B			make_led_bar
+		
+calculate_bar_ones
+		CMP			R1,R2
+		BLO			make_led_bar
+		LSLS		R2, R2, #0x01
+		ADDS		R2, R2, #0x01
+		B			calculate_bar_ones
+		
+make_led_bar
+		LDR			R0, =ADDR_LED_31_0
+		MOVS		R5, #0x00FF
+		ANDS		R2, R2, R5 
+		STR			R2, [R0]
+		
+
+
+
+		
+		
+
+
+						
 
 
 
 ; END: To be programmed
         B          main_loop
-        
+
+
+;---------------------------------------------------------subroutines		
+adc_divide_by_eight
+		LSRS		R0, R1, #3
+		BX			LR
+		
+button_pressed
+		;set background of LCD to green
+		LDR			R0, =ADDR_LCD_COLOUR
+		LDR			R1, =0xffff
+		LDR			R2, =DISPLAY_COLOUR_GREEN
+		STRH		R1, [R0, R2]
+
+		B			display
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 clear_lcd
         PUSH       {R0, R1, R2}
         LDR        R2, =0x0
