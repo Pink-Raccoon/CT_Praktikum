@@ -63,7 +63,7 @@ main            PROC
 read_dipsw      ; Read operands into R0 and R1 and display on LEDs
                 ; STUDENTS: To be programmed
 				LDR		R3, =ADDR_DIP_SWITCH_15_0
-				LDRH	R1, [R3]								;Extend to 32bit
+				LDR		R1, [R3]								;Extend to 32bit
 				
 				LDR		R3, =ADDR_LED_15_0
 				STRH	R1, [R3]								;Extend to 32bit
@@ -77,12 +77,12 @@ read_hexsw      ; Read operation into R2 and display on 7seg.
                 ; STUDENTS: To be programmed
 				LDR		R3, =ADDR_HEX_SWITCH
 				LDRB	R2, [R3]
-				MOVS R5, #0x0F									;mask for upper displays
-				ANDS R2, R2, R5									;and to mask upper displays
+				MOVS 	R5, #0xF0									;mask for upper displays
+				BICS 	R2, R2, R5									;and to mask upper displays
 
 				
 				LDR		R3, =ADDR_7_SEG_BIN_DS1_0
-				STRB	R2, [R3]
+				STRH	R2, [R3]
 
                 ; END: To be programmed
                 
@@ -164,7 +164,7 @@ case_bright
 display_result  ; Display result on LEDs
                 ; STUDENTS: To be programmed
 				LDR		R3, =ADDR_LED_31_16
-				STRH	R0, [R3]
+				STR	R0, [R3]
 
                 ; END: To be programmed
 
