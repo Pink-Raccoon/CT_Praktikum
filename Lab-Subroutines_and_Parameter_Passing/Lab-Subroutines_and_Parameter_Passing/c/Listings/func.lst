@@ -1,0 +1,95 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; ------------------------------------------------------
+                       -------------
+    2 00000000         ; -- Constants
+    3 00000000         ; ------------------------------------------------------
+                       -------------
+    4 00000000                 AREA             myCode, CODE, READONLY
+    5 00000000                 THUMB
+    6 00000000         
+    7 00000000         ; ------------------------------------------------------
+                       -------------                    
+    8 00000000         ; out_word
+    9 00000000         ; - address in R0
+   10 00000000         ; - value in R1
+   11 00000000         ; ------------------------------------------------------
+                       -------------   
+   12 00000000         out_word
+                               PROC
+   13 00000000                 EXPORT           out_word
+   14 00000000         
+   15 00000000 6001            STR              R1, [R0]    ; load value from R
+                                                            1 in address of R0
+   16 00000002 4770            BX               LR
+   17 00000004         
+   18 00000004                 ALIGN
+   19 00000004                 ENDP
+   20 00000004         
+   21 00000004         ; ------------------------------------------------------
+                       -------------                    
+   22 00000004         ; int_word
+   23 00000004         ; - address in R0
+   24 00000004         ; - result in R0
+   25 00000004         ; ------------------------------------------------------
+                       -------------   
+   26 00000004         in_word PROC
+   27 00000004                 EXPORT           in_word
+   28 00000004         
+   29 00000004 6800            LDR              R0, [R0]    ; read value from a
+                                                            ddress R0 into R0
+   30 00000006         
+   31 00000006 4770            BX               LR
+   32 00000008         
+   33 00000008                 ALIGN
+   34 00000008                 ENDP
+   35 00000008         
+   36 00000008         ; ------------------------------------------------------
+                       -------------
+   37 00000008         ; -- End of file
+   38 00000008         ; ------------------------------------------------------
+                       -------------                      
+   39 00000008                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
+ork --depend=.\objects\func.d -o.\objects\func.o -I.\RTE\_Target_1 -IC:\Users\r
+obin\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include -IC:\Users
+\robin\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include\m0 -IC:\
+Users\robin\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\HAL\Include --pred
+efine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 536" --predefine="_RT
+E_ SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\func.lst func.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+in_word 00000004
+
+Symbol: in_word
+   Definitions
+      At line 26 in file func.s
+   Uses
+      At line 27 in file func.s
+Comment: in_word used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 4 in file func.s
+   Uses
+      None
+Comment: myCode unused
+out_word 00000000
+
+Symbol: out_word
+   Definitions
+      At line 12 in file func.s
+   Uses
+      At line 13 in file func.s
+Comment: out_word used once
+3 symbols
+336 symbols in table

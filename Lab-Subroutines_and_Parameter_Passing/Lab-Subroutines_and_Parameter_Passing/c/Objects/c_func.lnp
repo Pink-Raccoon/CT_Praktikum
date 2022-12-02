@@ -1,0 +1,16 @@
+--cpu Cortex-M0
+".\objects\func.o"
+".\objects\main.o"
+".\objects\datainit_ctboard.o"
+".\objects\startup_ctboard.o"
+".\objects\system_ctboard.o"
+".\objects\hal_adc.o"
+".\objects\hal_fmc.o"
+".\objects\hal_gpio.o"
+".\objects\hal_pwr.o"
+".\objects\hal_rcc.o"
+".\objects\hal_spi.o"
+--strict --scatter ".\Objects\c_func.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\c_func.map" -o .\Objects\c_func.axf
