@@ -1,0 +1,363 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;* -----------------------------------------------------
+                       -------------
+    2 00000000         ;* --  _____       ______  _____                        
+                                   -
+    3 00000000         ;* -- |_   _|     |  ____|/ ____|                       
+                                   -
+    4 00000000         ;* --   | |  _ __ | |__  | (___    Institute of Embedded
+                        Systems    -
+    5 00000000         ;* --   | | | '_ \|  __|  \___ \   Zurich University of 
+                                   -
+    6 00000000         ;* --  _| |_| | | | |____ ____) |  Applied Sciences     
+                                   -
+    7 00000000         ;* -- |_____|_| |_|______|_____/   8401 Winterthur, Swit
+                       zerland     -
+    8 00000000         ;* -----------------------------------------------------
+                       -------------
+    9 00000000         ;* --
+   10 00000000         ;* -- Project     : CT1 - Lab 9
+   11 00000000         ;* -- Description : Multiplication 16 bit unsigned
+   12 00000000         ;* -- 
+   13 00000000         ;* -- $Id: $
+   14 00000000         ;* -----------------------------------------------------
+                       -------------
+   15 00000000         
+   16 00000000         
+   17 00000000 00000008 
+                       NR_OF_TESTS
+                               EQU              8
+   18 00000000         
+   19 00000000         ; ------------------------------------------------------
+                       -------------
+   20 00000000         ; -- Code
+   21 00000000         ; ------------------------------------------------------
+                       -------------
+   22 00000000                 AREA             myCode, CODE, READONLY
+   23 00000000                 THUMB
+   24 00000000         
+   25 00000000         mul_s16 PROC
+   26 00000000                 EXPORT           mul_s16
+   27 00000000                 IMPORT           display_title
+   28 00000000                 IMPORT           tests_16x16
+   29 00000000         
+   30 00000000 B50E            PUSH             {R1-R3,LR}
+   31 00000002         
+   32 00000002 480B            LDR              R0,=title
+   33 00000004 F7FF FFFE       BL               display_title
+   34 00000008         
+   35 00000008 4B0A            LDR              R3,=result_table
+   36 0000000A 4A0B            LDR              R2,=values
+   37 0000000C 490B            LDR              R1,=NR_OF_TESTS
+   38 0000000E 480C            LDR              R0,=operation
+   39 00000010 F7FF FFFE       BL               tests_16x16
+   40 00000014         
+   41 00000014 BD0E            POP              {R1-R3,PC}
+   42 00000016                 ENDP
+   43 00000016         
+   44 00000016         ; ------------------------------------------------------
+                       -------------
+   45 00000016         ; 16 bit multiplication
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   46 00000016         ; - multiplier in R0
+   47 00000016         ; - multiplicand in R1
+   48 00000016         ; - 32 bit result in R0
+   49 00000016         ; ------------------------------------------------------
+                       -------------
+   50 00000016         operation
+                               PROC
+   51 00000016 B5F0            PUSH             {R4-R7,LR}
+   52 00000018         
+   53 00000018         ; Instruction: do not use high registers in your code, 
+   54 00000018         ; or make sure they contain thier original values
+   55 00000018         ; when the function returns
+   56 00000018         
+   57 00000018         ; STUDENTS: To be programmed                        
+   58 00000018 B200            SXTH             R0          ;why?
+   59 0000001A B209            SXTH             R1          ;why?
+   60 0000001C         
+   61 0000001C 2400            MOVS             R4, #0
+   62 0000001E         loop
+   63 0000001E 0840            LSRS             R0, #1
+   64 00000020 D300            BCC              addEnd
+   65 00000022         
+   66 00000022         addR1
+   67 00000022 1864            ADDS             R4, R1
+   68 00000024         addEnd
+   69 00000024 0049            LSLS             R1, #1
+   70 00000026 2800            CMP              R0, #0
+   71 00000028 D1F9            BNE              loop
+   72 0000002A         endLoop
+   73 0000002A 0020            MOVS             R0, R4
+   74 0000002C         
+   75 0000002C         
+   76 0000002C         ; END: To be programmed
+   77 0000002C         
+   78 0000002C BDF0            POP              {R4-R7,PC}  ; return R0
+   79 0000002E                 ENDP
+   80 0000002E         
+   81 0000002E 00 00           ALIGN
+   82 00000030         
+   83 00000030         ; ------------------------------------------------------
+                       -------------
+   84 00000030         ; -- Constants
+   85 00000030         ; ------------------------------------------------------
+                       -------------
+   86 00000030 00000000 
+              00000000 
+              00000000 
+              00000008 
+              00000000         AREA             myConstants, DATA, READONLY
+   87 00000000         
+   88 00000000 01 00   values  DCW              0x0001
+   89 00000002 FF FF           DCW              0xffff
+   90 00000004 FFFFFFFF        DCD              0xffffffff
+   91 00000008         
+   92 00000008 17 00           DCW              0x0017
+   93 0000000A 4A 00           DCW              0x004a
+   94 0000000C 000006A6        DCD              0x000006a6
+   95 00000010         
+   96 00000010 FF FF           DCW              0xffff
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   97 00000012 FF FF           DCW              0xffff
+   98 00000014 00000001        DCD              0x00000001
+   99 00000018         
+  100 00000018 A4 73           DCW              0x73a4
+  101 0000001A 28 4C           DCW              0x4c28
+  102 0000001C 2266C1A0        DCD              0x2266c1a0
+  103 00000020         
+  104 00000020 CC 43           DCW              0x43cc
+  105 00000022 BF C3           DCW              0xc3bf
+  106 00000024 F00AF934        DCD              0xf00af934
+  107 00000028         
+  108 00000028 72 E3           DCW              0xe372
+  109 0000002A 34 02           DCW              0x0234
+  110 0000002C FFC11728        DCD              0xffc11728
+  111 00000030         
+  112 00000030 22 DD           DCW              0xdd22
+  113 00000032 DE BC           DCW              0xbcde
+  114 00000034 0924BB7C        DCD              0x0924bb7c
+  115 00000038         
+  116 00000038 FF 7F           DCW              0x7fff
+  117 0000003A FF 7F           DCW              0x7fff
+  118 0000003C 3FFF0001        DCD              0x3fff0001
+  119 00000040         
+  120 00000040 6D 75 6C 
+              5F 73 31 
+              36 00    title   DCB              "mul_s16", 0
+  121 00000048         
+  122 00000048                 ALIGN
+  123 00000048         
+  124 00000048         ; ------------------------------------------------------
+                       -------------
+  125 00000048         ; -- Variables
+  126 00000048         ; ------------------------------------------------------
+                       -------------
+  127 00000048                 AREA             myVars, DATA, READWRITE
+  128 00000000         
+  129 00000000 00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00    result_table
+                               SPACE            NR_OF_TESTS*4
+  130 00000020         
+  131 00000020                 ALIGN
+  132 00000020         
+  133 00000020         ; ------------------------------------------------------
+                       -------------
+  134 00000020         ; -- End of file
+  135 00000020         ; ------------------------------------------------------
+                       -------------                      
+  136 00000020                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --depend=.\bu
+ild\mul_s16.d -o.\build\mul_s16.o -I.\RTE\_Target_1 -IC:\Users\Asha\AppData\Loc
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+al\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include -IC:\Users\Asha\AppData\Lo
+cal\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include\m0 -IC:\Users\Asha\AppDat
+a\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\HAL\Include --predefine="__EVAL SETA
+ 1" --predefine="__UVISION_VERSION SETA 537" --predefine="_RTE_ SETA 1" --prede
+fine="_RTE_ SETA 1" --list=.\build\mul_s16.lst app\mul_s16.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+addEnd 00000024
+
+Symbol: addEnd
+   Definitions
+      At line 68 in file app\mul_s16.s
+   Uses
+      At line 64 in file app\mul_s16.s
+Comment: addEnd used once
+addR1 00000022
+
+Symbol: addR1
+   Definitions
+      At line 66 in file app\mul_s16.s
+   Uses
+      None
+Comment: addR1 unused
+endLoop 0000002A
+
+Symbol: endLoop
+   Definitions
+      At line 72 in file app\mul_s16.s
+   Uses
+      None
+Comment: endLoop unused
+loop 0000001E
+
+Symbol: loop
+   Definitions
+      At line 62 in file app\mul_s16.s
+   Uses
+      At line 71 in file app\mul_s16.s
+Comment: loop used once
+mul_s16 00000000
+
+Symbol: mul_s16
+   Definitions
+      At line 25 in file app\mul_s16.s
+   Uses
+      At line 26 in file app\mul_s16.s
+Comment: mul_s16 used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 22 in file app\mul_s16.s
+   Uses
+      None
+Comment: myCode unused
+operation 00000016
+
+Symbol: operation
+   Definitions
+      At line 50 in file app\mul_s16.s
+   Uses
+      At line 38 in file app\mul_s16.s
+Comment: operation used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+myConstants 00000000
+
+Symbol: myConstants
+   Definitions
+      At line 86 in file app\mul_s16.s
+   Uses
+      None
+Comment: myConstants unused
+title 00000040
+
+Symbol: title
+   Definitions
+      At line 120 in file app\mul_s16.s
+   Uses
+      At line 32 in file app\mul_s16.s
+Comment: title used once
+values 00000000
+
+Symbol: values
+   Definitions
+      At line 88 in file app\mul_s16.s
+   Uses
+      At line 36 in file app\mul_s16.s
+Comment: values used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+myVars 00000000
+
+Symbol: myVars
+   Definitions
+      At line 127 in file app\mul_s16.s
+   Uses
+      None
+Comment: myVars unused
+result_table 00000000
+
+Symbol: result_table
+   Definitions
+      At line 129 in file app\mul_s16.s
+   Uses
+      At line 35 in file app\mul_s16.s
+Comment: result_table used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+NR_OF_TESTS 00000008
+
+Symbol: NR_OF_TESTS
+   Definitions
+      At line 17 in file app\mul_s16.s
+   Uses
+      At line 37 in file app\mul_s16.s
+      At line 129 in file app\mul_s16.s
+
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+display_title 00000000
+
+Symbol: display_title
+   Definitions
+      At line 27 in file app\mul_s16.s
+   Uses
+      At line 33 in file app\mul_s16.s
+Comment: display_title used once
+tests_16x16 00000000
+
+Symbol: tests_16x16
+   Definitions
+      At line 28 in file app\mul_s16.s
+   Uses
+      At line 39 in file app\mul_s16.s
+Comment: tests_16x16 used once
+2 symbols
+350 symbols in table
